@@ -1,4 +1,3 @@
-import { useState } from 'preact/hooks'
 import { Router, Route, route } from 'preact-router'
 import './app.scss'
 import LoginPage from './routes/login'
@@ -18,8 +17,6 @@ const NotFound = () => {
 }
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Router>
