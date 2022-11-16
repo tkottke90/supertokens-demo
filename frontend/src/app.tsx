@@ -3,6 +3,7 @@ import './app.scss'
 import LoginPage from './routes/login'
 import HomePage from './routes/home'
 import PublicPage from './routes/public'
+import { AuthGuard } from './components'
 
 
 const NotFound = () => {
@@ -20,9 +21,9 @@ export function App() {
   return (
     <>
       <Router>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/app" component={HomePage} />
           <Route path="/" component={PublicPage} />
+          <Route path="/login" component={LoginPage} />
+          <AuthGuard path="/app" component={HomePage} />
           <Route default component={NotFound}/>
       </Router>
     </>

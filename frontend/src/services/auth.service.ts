@@ -1,8 +1,12 @@
 import { createContext } from 'preact';
+import { route } from 'preact-router';
+import { signal } from '@preact/signals';
 import { useState } from 'preact/hooks';
 import SuperTokens from "supertokens-web-js";
 import Session from "supertokens-web-js/recipe/session";
 import ThirdPartyEmailPassword from "supertokens-web-js/recipe/thirdpartyemailpassword";
+
+const loggedIn = signal<boolean>(false);
 
 SuperTokens.init({
   appInfo: {
@@ -16,8 +20,11 @@ SuperTokens.init({
   ] 
 });
 
-export function isLoggedIn() {
-  return Session.doesSessionExist();
+export async function isLoggedIn() {
+  
+  if (await Session.doesSessionExist()) {
+    route('/login');
+  }
 }
 
-export const AuthContext = createContext({  });
+export const AuthContext = createContext({ loggedIn });
