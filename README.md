@@ -1,5 +1,7 @@
-# Template: NodeJS/Preact/Typescript
+# Demo: SuperTokens
 
-Just a simple template for me to standup a project quickly.  This friendly setup allows me to use Preact as a UI along side of the NodeJS/Express backend I had previously written.  All written with Typescript goodness
+I learned recently about [SuperTokens](https://supertokens.com) as an alternative to Firebase Auth, Auth0, and Keycloak.  The market themselves as a developer friendly solution to authentication as a service. 
 
-This way I can throw up new ideas without having to do all of the setup each time.  I have already seen success with the parent template for Node
+For this project I followed their [Email/Password and Social Tutorial](https://supertokens.com/docs/thirdpartyemailpassword/introduction) (using my own UI) to learn about how to implement this in an existing project.  
+
+Overall it seems to live up to it's selling points and was fairly straight forward to implement.  I think I will be using it in the future as an alternative to Keycloak which I have found to be a struggle to implement.
