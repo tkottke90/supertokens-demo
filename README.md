@@ -28,3 +28,17 @@ After you have done that, we need to setup the "_SuperTokens Core_" which is a d
 The script will also take care of running `npm install` on both the _frontend_ and _backend_ directories to get them up and ready to go.
 
 Finally open a terminal for each environment and run `npm run start` to spin up the backend and frontend.  The backend uses _Nodemon_ and _TS-Node_ and the frontend is _Preact_ and _Vite_.
+
+```shell
+# Terminal 1
+cd frontend
+npm run start
+```
+
+```shell
+# Terminal 2
+cd backend
+npm run start
+```
+
+Vite will provide you with a link in your terminal to open the page in your web browser and you should be off to the races!
