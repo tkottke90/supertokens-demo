@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@preact/signals": "^1.1.2",
+    "formik": "^2.2.9",
     "preact": "^10.11.2",
     "preact-router": "^3.2.1",
+    "rxjs": "^7.5.7",
     "supertokens-web-js": "^0.3.0"
   },
   "devDependencies": {

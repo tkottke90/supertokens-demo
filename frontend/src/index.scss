@@ -79,3 +79,73 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+.form-field {
+  position: relative;
+  margin-top: 0.25rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  input, select {
+    width: 100%;
+    min-height: 1rem;
+
+    &[type="checkbox"] {
+      width: unset;
+      margin-right: 1rem;
+
+      /* Add if not using autoprefixer */
+      -webkit-appearance: none;
+      appearance: none;
+      /* For iOS < 15 to remove gradient background */
+      background-color: #fff;
+      /* Not removed via appearance */
+      margin: 0;
+
+      font: inherit;
+      color: currentColor;
+      width: 1.15em;
+      height: 1.15em;
+      border: 0.15em solid currentColor;
+      border-radius: 0.15em;
+      transform: translateY(-0.075em);
+
+      display: grid;
+      place-content: center;
+
+      &::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(purple);
+
+        background-color: var(--theme-accent);
+      }
+
+      &:checked::before {
+        transform: scale(1);
+      }
+
+      & ~ label {
+        display: inline-block;
+      }
+    }
+  }
+
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-left: 0.5rem;
+  }
+}

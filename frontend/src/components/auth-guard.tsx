@@ -1,15 +1,13 @@
-import { Fragment, FunctionalComponent, JSX } from "preact";
-import { useCallback, useContext, useEffect } from "preact/hooks";
-import { AuthService } from "../services";
-import {} from 'supertokens-web-js'
-import { useSignalEffect } from '@preact/signals';
+import { FunctionalComponent, JSX } from "preact";
 import { Route, route } from "preact-router";
+import { useContext, useEffect } from "preact/hooks";
+import { AuthService } from "../services";
 
 const AuthGuard: FunctionalComponent<{path: string, component: () => JSX.Element}> = ({ path, component }) => {
   const { loggedIn } = useContext(AuthService.AuthContext);
 
-  useSignalEffect(() => {
-    if (!loggedIn.value) {
+  useEffect(() => {
+    if (!loggedIn.getValue()) {
       route('/login');
     }
   })

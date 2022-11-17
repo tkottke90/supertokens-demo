@@ -54,13 +54,13 @@ const LoginForm = () => {
   );
 }
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const { googleAuth } = useContext(AuthService.AuthContext);
 
   return(
     <main>
       <div className="card login-card">
-        <h2>Login To App</h2>
+        <h2>Sign Up</h2>
         <br />
         <button onClick={() => googleAuth()}>Login with Google</button>
         <br />
@@ -69,10 +69,10 @@ const LoginPage = () => {
         <br />
         <LoginForm />
         <br />
-        <p>Not a user?  <a href="/sign-up">Sign Up</a></p>
+        <p>Already a user?  <a href="/login">Sign In</a></p>
       </div>
     </main>
   )
 }
 
-export default LoginPage;
+export default SignUpPage;
